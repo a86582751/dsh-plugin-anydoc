@@ -42,7 +42,7 @@ dsh plugin --profile web remove dsh-plugin-anydoc
 启动 DSH Web 后，向 Agent 发送类似指令：
 
 ```
-请将 C:\path\to\report.docx 转换为 Markdown
+请将 /path/to/report.docx 转换为 Markdown
 ```
 
 Agent 会调用 `anydoc` 工具，返回转换后的 Markdown 内容。
@@ -68,7 +68,7 @@ pnpm build
 本地加载（--patch 开发模式）：
 
 ```sh
-pnpm dsh web --patch "C:\path\to\dsh-plugin-anydoc\dev.cordis.patch.yml"
+pnpm dsh web --patch "/path/to/dsh-plugin-anydoc/dev.cordis.patch.yml"
 ```
 
 ## 许可
