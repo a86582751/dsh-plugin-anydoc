@@ -71,6 +71,10 @@ pnpm build
 pnpm dsh web --patch "/path/to/dsh-plugin-anydoc/dev.cordis.patch.yml"
 ```
 
+## 社区
+
+本项目积极支持并感谢 [LINUX DO](https://linux.do) 社区——一个面向技术爱好者的友好交流空间。
+
 ## 许可
 
 MIT
