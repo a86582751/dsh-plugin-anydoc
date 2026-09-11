@@ -1,0 +1,36 @@
+{
+  "name": "dsh-plugin-anydoc",
+  "version": "0.1.0-nexttavern.1",
+  "description": "DSH plugin: convert documents to GitHub-Flavored Markdown via @firecrawl/anydoc",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md"
+  ],
+  "scripts": {},
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@firecrawl/anydoc": "^0.1.8"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": "0.1.2-alpha.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a86582751/dsh-plugin-anydoc.git"
+  },
+  "homepage": "https://github.com/a86582751/dsh-plugin-anydoc",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,3 +1,25 @@
+# NextTavern compatibility maintenance
+
+This is a formal fork of https://github.com/beancookie/dsh-plugin-anydoc. Upstream source and history are retained.
+
+Compatibility release: **0.1.0-nexttavern.1** for Harness **0.1.2-alpha.3**. The original author did not publish or endorse this compatibility release.
+
+The distributable package is reconstructed from fixed upstream compiled inputs and the reviewed byte deltas in `nexttavern-compat/build-input.json`. The historical root build script alone does not include these deltas. No install-time script applies changes.
+
+Upstream commit: `3af159ed06f62f3d2c61ab21c6a2475c71efbfa4`. Obtain a clean checkout of that commit, including its `lib/` directory. With Node.js 22+ and Python 3, run:
+
+```text
+node nexttavern-compat/rebuild.mjs --upstream ORIGINAL_PACKAGE_DIRECTORY --out NEW_DIRECTORY
+```
+
+The builder verifies every input/output SHA-256 and the final tgz SHA-256: `e0b2f7b521e7f8ada5a9f791780fa21aac6d6acf0344574f77cc54dc2ee2302e`.
+
+See [NOTICE](nexttavern-compat/package-metadata/NOTICE.md) for the changes and attribution, and [LICENSE](nexttavern-compat/package-metadata/LICENSE) for the original MIT terms.
+
+Original project documentation is preserved below.
+
+---
+
 # dsh-plugin-anydoc
 
 一个 DeepSeek Harness (DSH) 插件，将 `@firecrawl/anydoc` 作为 `anydoc` 工具注册给 Agent，把多种文档格式转换为 GitHub-Flavored Markdown。
