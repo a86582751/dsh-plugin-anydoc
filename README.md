@@ -1,3 +1,5 @@
+> **Current NextTavern candidate:** `dsh-nexttavern-anydoc@0.1.0-nexttavern.2` is private and unpublished. It has no automatic global bundle registration. The source and generated files in this checkout come from the shared maintenance manifest build; the 0.2.5 replay records under `nexttavern-compat/` are historical inputs only. See [`nexttavern-compat/source-sync.json`](nexttavern-compat/source-sync.json).
+
 # NextTavern compatibility maintenance
 
 This is a formal fork of https://github.com/beancookie/dsh-plugin-anydoc. Upstream source and history are retained.
@@ -42,6 +44,8 @@ Original project documentation is preserved below.
 > 不支持 HTML、JSON、XML、图片与音频。
 
 ## 安装
+
+The historical installation command below targets the original `dsh-plugin-anydoc` compatibility release. It does not install or select the current private `dsh-nexttavern-anydoc` candidate.
 
 ```sh
 dsh plugin --profile web add github:beancookie/dsh-plugin-anydoc

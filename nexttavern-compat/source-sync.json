@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "package": "dsh-nexttavern-anydoc",
+  "version": "0.1.0-nexttavern.2",
+  "baseCommit": "3af159ed06f62f3d2c61ab21c6a2475c71efbfa4",
+  "previousForkCommit": "640ea1644ba998676ac905ee24da9e8b46256000",
+  "maintenanceSourceCommit": "011607e89965a54aa4aba00952bad032ac3fe51f",
+  "files": [
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/package.json",
+      "forkPath": "package.json",
+      "sha256": "1c37f952b7bb306d7a0406e01b519e6d8d5eb90c9aff45940e7ef4515d871000"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/LICENSE",
+      "forkPath": "LICENSE",
+      "sha256": "fc597ade686add5aa7cecaa2f81bdaf086c85c8ab0e74db7bb5974e0f0fbfc76"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/NOTICE.md",
+      "forkPath": "NOTICE.md",
+      "sha256": "d6034272a067a5b90699e476c7d5f7eca859c972c9f52fdfba90e90b5425832a"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/src/index.ts",
+      "forkPath": "src/index.ts",
+      "sha256": "5b3d11458fc89914d86f4c6c9962663aa666839f087fff0da2b27c6df0d90d08"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/src/normalize-markdown.ts",
+      "forkPath": "src/normalize-markdown.ts",
+      "sha256": "a9051bdac8d806f558eff7c9de74547a664f30f53473059a0f45e328b850fed2"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/lib/index.js",
+      "forkPath": "lib/index.js",
+      "sha256": "0c9513b3ed5b89c3503516600748e354663828d00323ee58a68aa8243e7b4e10"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/lib/normalize-markdown.js",
+      "forkPath": "lib/normalize-markdown.js",
+      "sha256": "c91204033e6b5d8c02e3f31b600b20c832b01ee7c3f743bd0ca3079f5606fdbb"
+    }
+  ],
+  "build": {
+    "sourceManifest": "release/source-manifest.json",
+    "recipes": [
+      "compat-anydoc-index-js-build",
+      "compat-anydoc-normalize-markdown-js-build"
+    ],
+    "builder": "runtime/alpha3/lib/operations/build-typescript.mjs",
+    "config": "runtime/alpha3/build-tools/tsconfig.json",
+    "sourceState": "canonical files copied from the shared maintenance workspace; generated lib files were already produced by the shared build chain"
+  },
+  "validation": {
+    "reusedEvidence": [
+      "canonical anydoc strict TypeScript 5.9.3 compilation passed for both modules",
+      "plugin-owned-anydoc.test.mts passed 2/2: real CSV conversion/write, real DSH Tools scope, synthetic original tool, no Harness"
+    ],
+    "syncChecks": [
+      "7-file byte equality against canonical runtime/alpha3/compat/anydoc",
+      "historical root cordis.patch.yml and pnpm-lock.yaml moved below nexttavern-compat",
+      "diff limited to the compatibility allowlist"
+    ],
+    "limitations": [
+      "fork full npm build/check was not rerun",
+      "fork tests were not rerun",
+      "no npm install, release, tag, or published package",
+      "0.2.5 replay material remains historical only"
+    ]
+  }
+}

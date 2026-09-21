@@ -1,9 +1,10 @@
-import type { Context } from '@deepseek-ai/cordis'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import { toMarkdown, toMarkdownBytes, type Format } from '@firecrawl/anydoc'
+import type {Context} from '@deepseek-ai/cordis'
+import {defineTool} from '@deepseek-ai/dsh-tools'
+import {toMarkdown, toMarkdownBytes, type Format} from '@firecrawl/anydoc'
 import fs from 'node:fs/promises'
+import {dshNormalizeMarkdown} from './normalize-markdown.js'
 
-export const name = 'dsh-plugin-anydoc'
+export const name = 'dsh-nexttavern-anydoc'
 
 export const inject = ['tools']
 
@@ -19,15 +20,15 @@ const ERROR_HINTS: Record<string, string> = {
 export function apply(ctx: Context) {
   ctx.tools.register(defineTool({
     name: 'anydoc',
-    description: '将文档（Word、PowerPoint、Excel、PDF、EPUB、RTF、CSV、OpenDocument）转换为 GitHub-Flavored Markdown。',
+    description: '将文档（Word、PowerPoint、Excel、PDF、EPUB、RTF、CSV、OpenDocument）转换为 GitHub-Flavored Markdown；转换器产生的 Markdown 防御性转义会在返回前确定性还原（代码块与路径保持不变）。',
     parameters: {
-      filePath: { type: 'string', required: true, description: '要转换文件的绝对路径或相对路径' },
-      format: { type: 'string', description: '可选，显式指定格式（如 csv）；缺省时根据文件内容自动检测' },
-      outputFilePath: { type: 'string', description: '可选，将转换结果写入该文件并返回摘要，而非返回完整 Markdown 文本' },
+      filePath: {type: 'string', required: true, description: '要转换文件的绝对路径或相对路径'},
+      format: {type: 'string', description: '可选，显式指定格式（如 csv）；缺省时根据文件内容自动检测'},
+      outputFilePath: {type: 'string', description: '可选，将转换结果写入该文件并返回摘要，而非返回完整 Markdown 文本'},
     },
     output: {
-      schema: { type: 'string' },
-      render: (_args, value) => [{ type: 'text', text: value }],
+      schema: {type: 'string'},
+      render: (_args, value) => [{type: 'text', text: value}],
     },
     isConcurrencySafe: () => true,
     async execute(args) {
@@ -37,11 +38,12 @@ export function apply(ctx: Context) {
           ? await toMarkdownBytes(await fs.readFile(args.filePath), args.format as Format)
           : await toMarkdown(args.filePath)
       } catch (error) {
-        const code = (error as { code?: string }).code
+        const code = (error as {code?: string}).code
         const hint = code && ERROR_HINTS[code] ? `（${ERROR_HINTS[code]}）` : ''
         throw new Error(`转换 "${args.filePath}" 失败: ${(error as Error).message}${hint}`)
       }
 
+      markdown = dshNormalizeMarkdown(markdown)
       if (!markdown.trim()) {
         throw new Error(`转换 "${args.filePath}" 得到空内容，可能是不支持的格式或文件已损坏。`)
       }
