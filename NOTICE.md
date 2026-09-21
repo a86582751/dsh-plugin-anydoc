@@ -3,9 +3,10 @@
 Upstream: https://github.com/beancookie/dsh-plugin-anydoc
 Base version: 0.1.0
 Base commit: 3af159ed06f62f3d2c61ab21c6a2475c71efbfa4
-Compatibility version: 0.1.0-nexttavern.2
+Compatibility version: 0.1.0-nexttavern.3
 
-Maintained for Harness 0.1.2-alpha.3. This is a private compatibility
+Maintained for Harness 0.1.6-alpha.2 with @firecrawl/anydoc 0.2.4. The upstream
+plugin still uses the base commit above (checked 2026-09-21). This is a private compatibility
 candidate, not an upstream release. The original copyright and MIT license
 are preserved.
 
