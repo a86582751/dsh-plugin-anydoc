@@ -4,7 +4,8 @@
   "version": "0.1.0-nexttavern.2",
   "baseCommit": "3af159ed06f62f3d2c61ab21c6a2475c71efbfa4",
   "previousForkCommit": "640ea1644ba998676ac905ee24da9e8b46256000",
-  "maintenanceSourceCommit": "011607e89965a54aa4aba00952bad032ac3fe51f",
+  "maintenanceBaseCommit": "011607e89965a54aa4aba00952bad032ac3fe51f",
+  "sourceCommitNote": "The synchronized canonical files include subsequent maintenance changes not present in maintenanceBaseCommit; the recorded per-file SHA-256 values are authoritative until those changes are committed.",
   "files": [
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/package.json",
@@ -19,12 +20,12 @@
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/NOTICE.md",
       "forkPath": "NOTICE.md",
-      "sha256": "d6034272a067a5b90699e476c7d5f7eca859c972c9f52fdfba90e90b5425832a"
+      "sha256": "e2942c852b0921c783a2074c4ffa6c062c05abbe1e6c38f46f57a1eb40b5d80f"
     },
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/src/index.ts",
       "forkPath": "src/index.ts",
-      "sha256": "5b3d11458fc89914d86f4c6c9962663aa666839f087fff0da2b27c6df0d90d08"
+      "sha256": "6ca756238ad675a59ac671b052dfc37a263eab1540a138c1e7d3694e31f6e950"
     },
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/src/normalize-markdown.ts",
@@ -34,7 +35,7 @@
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/lib/index.js",
       "forkPath": "lib/index.js",
-      "sha256": "0c9513b3ed5b89c3503516600748e354663828d00323ee58a68aa8243e7b4e10"
+      "sha256": "0b3bb39a32b253587581d890382984985704f93ce1ebf337f15d2e59f7ad68da"
     },
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/lib/normalize-markdown.js",
