@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "package": "dsh-nexttavern-anydoc",
-  "version": "0.1.0-nexttavern.2",
+  "version": "0.1.0-nexttavern.4",
   "baseCommit": "3af159ed06f62f3d2c61ab21c6a2475c71efbfa4",
   "previousForkCommit": "640ea1644ba998676ac905ee24da9e8b46256000",
-  "maintenanceBaseCommit": "011607e89965a54aa4aba00952bad032ac3fe51f",
-  "sourceCommitNote": "The synchronized canonical files include subsequent maintenance changes not present in maintenanceBaseCommit; the recorded per-file SHA-256 values are authoritative until those changes are committed.",
+  "maintenanceBaseCommit": "1c9d28b0f90106bfbe5764a5128cc8bcb5748026",
+  "sourceCommitNote": "The synchronized canonical files include subsequent maintenance changes not present in maintenanceBaseCommit; the recorded per-file SHA-256 values are authoritative until those changes are committed. NOTICE.md is currently an uncommitted canonical maintenance change and is authoritative by its recorded hash.",
   "files": [
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/package.json",
       "forkPath": "package.json",
-      "sha256": "1c37f952b7bb306d7a0406e01b519e6d8d5eb90c9aff45940e7ef4515d871000"
+      "sha256": "ca46ddc252cf9f7b23f8683d32f134591db62874abc63a54849d76f265621dc6"
     },
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/LICENSE",
@@ -20,12 +20,17 @@
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/NOTICE.md",
       "forkPath": "NOTICE.md",
-      "sha256": "e2942c852b0921c783a2074c4ffa6c062c05abbe1e6c38f46f57a1eb40b5d80f"
+      "sha256": "8116fe3decd627c21436879091757410e34d545a8eedcfc07ebabf426c290064"
     },
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/src/index.ts",
       "forkPath": "src/index.ts",
-      "sha256": "6ca756238ad675a59ac671b052dfc37a263eab1540a138c1e7d3694e31f6e950"
+      "sha256": "a8f848374473d29722b12f46817e092b5873a248009e1f26ee4687f482b9e866"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/src/document-reader.ts",
+      "forkPath": "src/document-reader.ts",
+      "sha256": "4386cddd0d26d39e24c13db7d1c3aafe774101fd7be37830fd6a461090323173"
     },
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/src/normalize-markdown.ts",
@@ -35,7 +40,12 @@
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/lib/index.js",
       "forkPath": "lib/index.js",
-      "sha256": "0b3bb39a32b253587581d890382984985704f93ce1ebf337f15d2e59f7ad68da"
+      "sha256": "3001c01710284fcafdac4cb96eba0a7b486f28f051af22b15243402e117fdea2"
+    },
+    {
+      "maintenancePath": "runtime/alpha3/compat/anydoc/lib/document-reader.js",
+      "forkPath": "lib/document-reader.js",
+      "sha256": "92cebe12ef0dc332facc8cbed8069ecaf52dd0f814e12e9bf2e81bb98c003580"
     },
     {
       "maintenancePath": "runtime/alpha3/compat/anydoc/lib/normalize-markdown.js",
@@ -47,6 +57,7 @@
     "sourceManifest": "release/source-manifest.json",
     "recipes": [
       "compat-anydoc-index-js-build",
+      "compat-anydoc-document-reader-js-build",
       "compat-anydoc-normalize-markdown-js-build"
     ],
     "builder": "runtime/alpha3/lib/operations/build-typescript.mjs",
@@ -59,7 +70,7 @@
       "plugin-owned-anydoc.test.mts passed 2/2: real CSV conversion/write, real DSH Tools scope, synthetic original tool, no Harness"
     ],
     "syncChecks": [
-      "7-file byte equality against canonical runtime/alpha3/compat/anydoc",
+      "9-file byte equality against canonical runtime/alpha3/compat/anydoc",
       "historical root cordis.patch.yml and pnpm-lock.yaml moved below nexttavern-compat",
       "diff limited to the compatibility allowlist"
     ],

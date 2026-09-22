@@ -1,10 +1,12 @@
-> **Current NextTavern candidate:** `dsh-nexttavern-anydoc@0.1.0-nexttavern.2` is private and unpublished. It has no automatic global bundle registration. The source and generated files in this checkout come from the shared maintenance manifest build; the 0.2.5 replay records under `nexttavern-compat/` are historical inputs only. See [`nexttavern-compat/source-sync.json`](nexttavern-compat/source-sync.json).
+> **Current NextTavern candidate:** `dsh-nexttavern-anydoc@0.1.0-nexttavern.4` targets Harness **0.1.7-alpha.1** with `@firecrawl/anydoc@0.2.4`. It is private and unpublished, with no automatic global bundle registration. The current source and generated files come from the shared maintenance manifest build; the 0.2.5 replay records under `nexttavern-compat/` are historical inputs only. See [`nexttavern-compat/source-sync.json`](nexttavern-compat/source-sync.json).
 
 # NextTavern compatibility maintenance
 
 This is a formal fork of https://github.com/beancookie/dsh-plugin-anydoc. Upstream source and history are retained.
 
-Compatibility release: **0.1.0-nexttavern.1** for Harness **0.1.2-alpha.3**. The original author did not publish or endorse this compatibility release.
+## Historical 0.2.5 compatibility inputs
+
+The following compatibility replay is historical and is not used by the current alpha7 build. Compatibility release: **0.1.0-nexttavern.1** for Harness **0.1.2-alpha.3**. The original author did not publish or endorse this compatibility release.
 
 The distributable package is reconstructed from fixed upstream compiled inputs and the reviewed byte deltas in `nexttavern-compat/build-input.json`. The historical root build script alone does not include these deltas. No install-time script applies changes.
 
